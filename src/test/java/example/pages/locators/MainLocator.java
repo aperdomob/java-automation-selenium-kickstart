@@ -8,7 +8,7 @@ import utilities.LocatorBase;
 public class MainLocator extends LocatorBase {
 
   public WebElement getSearchField() {
-    return this.driver.findElement(By.className("serachfield"));
+    return this.driver.findElement(By.className("searchfield"));
   }
   
   public WebElement getSearchButton() {

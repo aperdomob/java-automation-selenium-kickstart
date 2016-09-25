@@ -9,12 +9,12 @@ public class PageObjectBase<T extends LocatorBase> {
   
   protected final WebDriver driver;
   protected final WebDriverWait wait;
-  protected T map;
+  protected final T map;
 
   public PageObjectBase() {
-    this.map = getInstance();
     this.driver = Browser.getInstance().getDriver();
     this.wait = Browser.getInstance().getWait();
+    this.map = getInstance();
   }
   
   @SuppressWarnings("unchecked")
@@ -29,5 +29,4 @@ public class PageObjectBase<T extends LocatorBase> {
       return null;
     }
   }
-  
 }
