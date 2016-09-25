@@ -38,7 +38,7 @@ public class Browser {
 	}
 	
 	public void start() {
-	  this.driver.get("http://localhost:8080");
+	  this.driver.get("https://elite-movie-psl.herokuapp.com");
 	}
 	
 	public void close() {

@@ -11,7 +11,7 @@ public class EliteMovieTest {
 
   @Before
   public void setup() {
-    // Browser.getInstance().start();
+     Browser.getInstance().start();
   }
   
   @After
