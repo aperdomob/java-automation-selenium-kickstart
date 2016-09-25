@@ -5,9 +5,11 @@ import utilities.PageObjectBase;
 
 public class MainPage extends PageObjectBase<MainLocator>{
 
-  public void goToMovie(String movieName) {
+  public ScheduleMoviePage goToMovie(String movieName) {
     this.map.getSearchField().sendKeys(movieName);
     this.map.getSearchButton();
     this.map.getFirstFilm().click();
+    
+    return new ScheduleMoviePage();
   }
 }

@@ -6,9 +6,13 @@ import utilities.PageObjectBase;
 
 public class SelectSeatPage extends PageObjectBase<SelectSeatLocator>{
   
-  public void SelectSeat(Seat[] seats) {
+  public ConfirmationPage selectSeat(Seat[] seats) {
     for (Seat seat : seats) {
       this.map.getSeat(seat.getRow(), seat.getColumn()).click();
     }
+    
+    this.map.getContinueButton().click();
+    
+    return new ConfirmationPage();
   }
 }
