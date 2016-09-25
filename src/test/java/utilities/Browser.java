@@ -11,10 +11,13 @@ public class Browser {
 	
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private ApplicationConfig configuration;
 	
 	private Browser() {
+	  this.configuration = new ApplicationConfig();
+	  
 		this.driver = new FirefoxDriver();
-		this.wait = new WebDriverWait(this.driver, 30);
+		this.wait = new WebDriverWait(this.driver, this.configuration.getTimeout());
 	}
 	
 	public static Browser getInstance() {
@@ -38,7 +41,7 @@ public class Browser {
 	}
 	
 	public void start() {
-	  this.driver.get("https://elite-movie-psl.herokuapp.com");
+	  this.driver.get(configuration.getUrlBase());
 	}
 	
 	public void close() {
