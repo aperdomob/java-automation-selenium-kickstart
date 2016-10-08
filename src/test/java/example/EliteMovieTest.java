@@ -31,7 +31,7 @@ public class EliteMovieTest {
     MainPage eliteMoviePage = new MainPage();
     
     String message = eliteMoviePage
-      .goToMovie("sinsajo")
+      .goToMovie("violinista")
       .reserve("2020-03-02 20:00", seats.length)
       .selectSeat(seats)
       .getConfirmationMessage();

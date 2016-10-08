@@ -12,6 +12,6 @@ public class SelectSeatLocator extends LocatorBase {
   }
   
   public WebElement getContinueButton() {
-    return this.driver.findElement(By.cssSelector("button.bth:nth-child(2)"));
+    return this.driver.findElement(By.cssSelector("button.btn:nth-child(2)"));
   }
 }

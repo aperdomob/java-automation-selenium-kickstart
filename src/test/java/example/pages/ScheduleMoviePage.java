@@ -7,7 +7,7 @@ public class ScheduleMoviePage extends PageObjectBase<ScheduleMovieLocator>{
 
   public SelectSeatPage reserve(String showTime, int seats) {
     this.map.getShowTimeOption().selectByVisibleText(showTime);
-    this.map.getSeatsItems().deselectByValue(String.valueOf(seats));
+    this.map.getSeatsItems().selectByValue(String.valueOf(seats));
     this.map.getContinueButton().click();
     
     return new SelectSeatPage();

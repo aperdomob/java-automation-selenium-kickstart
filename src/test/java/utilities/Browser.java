@@ -1,7 +1,6 @@
 package utilities;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Browser {
@@ -16,7 +15,7 @@ public class Browser {
 	private Browser() {
 	  this.configuration = new ApplicationConfig();
 	  
-		this.driver = new FirefoxDriver();
+		this.driver = BrowserFactory.getBrowser(this.configuration.getBrowser());
 		this.wait = new WebDriverWait(this.driver, this.configuration.getTimeout());
 	}
 	

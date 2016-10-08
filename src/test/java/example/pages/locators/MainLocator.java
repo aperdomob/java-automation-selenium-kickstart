@@ -16,6 +16,6 @@ public class MainLocator extends LocatorBase {
   }
   
   public WebElement getFirstFilm() {
-    return this.driver.findElement(By.xpath("html/body/div[2]/div[2]/div/a/img"));
+    return this.driver.findElement(By.cssSelector("a.ng-scope:nth-child(1)"));
   }
 }
