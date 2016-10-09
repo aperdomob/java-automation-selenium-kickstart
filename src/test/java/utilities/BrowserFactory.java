@@ -5,6 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
+
 public class BrowserFactory {
   
   public static WebDriver getBrowser(String browserType) {
@@ -17,10 +20,12 @@ public class BrowserFactory {
         break;
       
       case "chrome":
+        ChromeDriverManager.getInstance().setup();
         driver = new ChromeDriver();
         break;
         
       case "iexplorer":
+        InternetExplorerDriverManager.getInstance().setup();
         driver = new InternetExplorerDriver();
         break;
       
