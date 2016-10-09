@@ -1,16 +1,10 @@
 package utilities;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 
-import org.apache.commons.configuration.CompositeConfiguration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.configuration.SystemConfiguration;
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
+import org.apache.commons.configuration2.ex.ConfigurationException;
 
 public class ApplicationConfig {
 
@@ -36,16 +30,14 @@ public class ApplicationConfig {
   
   private void loadConfig() {
     try {
-      CompositeConfiguration config = new CompositeConfiguration();
-      config.addConfiguration(new SystemConfiguration());
-      config.addConfiguration(new PropertiesConfiguration("config" + File.separator + "qa.properties"));
-      
+      Configurations configs = new Configurations();
+      Configuration config = configs.properties("config" + File.separator + "qa.properties");
+
       this.browser = config.getString("browser");
       this.urlBase = config.getString("urlBase");
       this.timeout = config.getInt("timeout");
-
     } catch (ConfigurationException e) {
       e.printStackTrace();
-    }    
+    }
   }
 }
